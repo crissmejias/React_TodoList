@@ -1,0 +1,27 @@
+.todo-item{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    background-color: aliceblue;
+    padding:12px 20px;
+}
+.todo-completed{
+    background-color: rgba(240, 248, 255, 0.806);
+}
+.todo-completed > p{
+    text-decoration:line-through;
+}
+.todo-checkmark{
+    background-color: lightgreen;
+    padding:10px;
+    border-radius: 60%;
+    font-size: 12px;
+    color:black;
+}
+.todo-cancel{
+    background-color: lightcoral;
+    padding:10px;
+    border-radius: 60%;
+    font-size: 12px;
+    color:black;  
+}

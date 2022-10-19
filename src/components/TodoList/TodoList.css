@@ -1,0 +1,13 @@
+.todoContainer{
+  width:70%;
+  min-width: 100px;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  gap:24px;
+  margin: 0 auto;
+  padding:32px;
+  background-color:rgba(105, 90, 205, 0.776);
+  border-radius: 8px;
+  
+}

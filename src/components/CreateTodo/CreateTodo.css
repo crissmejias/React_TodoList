@@ -1,0 +1,12 @@
+.todo-add{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: none;
+    font-size: 34px;
+    background-color: rgba(149, 149, 243);
+    position:fixed;
+    bottom: 42px;
+    right:42px;
+    z-index: 1;
+}

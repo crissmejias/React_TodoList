@@ -1,0 +1,90 @@
+#modal:has(div) {
+    position: absolute;
+    top:0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width:100%;
+    background-color: rgba(159, 157, 157, 0.604);
+}
+.modal-close{
+    position: absolute;
+    top:8px;
+    right:12px;
+    border:3px;
+    background-color: rgba(240, 248, 255, 0.901);
+    border-radius: 4px;
+}
+.modal-close:hover{
+    background-color: lightcoral;
+}
+.modal-background{
+    position:relative;
+    width:80%;
+    margin-top:2%;
+    max-width: 400px;
+    height: 240px;
+    background-color:rgba(240, 248, 255, 0.981);
+    z-index: 1;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.modal-form{
+    width:100%;
+    height: inherit;
+    display: flex;
+    flex-direction: inherit;
+    align-items: inherit;
+    justify-content: inherit;
+}
+.modal-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.error-msg{
+    font-size: 14px;
+    color:rgb(161, 54, 54);
+}
+.modal-title{
+    font-size: 16px;
+    font-weight: 600;
+   
+}
+.modal-input{
+    width:80%;
+    border:none;
+    border-radius: 8px;
+    height:80px;
+    background-color: rgba(149, 149, 243, 0.585);
+}
+.modal-actions-section{
+    width:80%;
+    height: 10%;
+    display: flex;
+    justify-content: space-around;
+    gap:12px;
+}
+.modal-cancel, .modal-add{
+    height: 30px;
+    width:80%;
+    border: none;
+    border-radius: 8px;
+}
+.modal-cancel{
+    background-color: rgb(250, 157, 157);
+}
+.modal-add{
+    background-color: rgba(105, 90, 205, 0.776);
+}
+.add-disabled{
+    background-color: rgba(255, 255, 255, 0.776); 
+    border:2px solid rgba(105, 90, 205, 0.776);
+}
+
+
+    
