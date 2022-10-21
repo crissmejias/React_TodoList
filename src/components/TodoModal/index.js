@@ -1,11 +1,11 @@
+import React from 'react'
 import ReactDOM from 'react-dom'
 import './TodoModal.css'
-import { TodoForm } from '../TodoForm';
-const TodoModal = () => {
+const TodoModal = ({children}) => {
     
     return ReactDOM.createPortal(
         <div className='modal-background'>
-            <TodoForm />
+            {children}
     </div>,
     document.getElementById('modal')
     );

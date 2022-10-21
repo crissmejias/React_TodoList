@@ -1,8 +1,8 @@
+import React from 'react'
+import ReactDOM from 'react-dom'
 import './TodoSearch.css'
-import { TodoContext } from '../TodoContext'
-import { useContext } from 'react'
-const TodoSearch = () => {
-    const {setSearchValue} = useContext(TodoContext)
+
+const TodoSearch = ({setSearchValue}) => {
          const onSearchValueChange = (event) => {
             setSearchValue(event.target.value)  
         }

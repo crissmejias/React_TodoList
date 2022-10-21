@@ -1,9 +1,8 @@
-import {useContext, useState} from 'react'
-import { TodoContext } from '../TodoContext'
-const TodoForm = () => {
+import React, {useState} from 'react'
+const TodoForm = ({setOpenModal, addTodos}) => {
     const [error, setError] = useState('');
     const [todoValue, setTodoValue] = useState('');
-    const {setOpenModal, addTodos} = useContext(TodoContext)
+    
     const clickHandler = () => {
         setOpenModal(false)
     }
