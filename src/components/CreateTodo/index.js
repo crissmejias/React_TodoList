@@ -1,3 +1,4 @@
+import React from 'react'
 import './CreateTodo.css'
 const CreateTodo = ({openModal, setOpenModal}) => {
 

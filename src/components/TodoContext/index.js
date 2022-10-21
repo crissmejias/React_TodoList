@@ -1,3 +1,4 @@
+import React from 'react';
 import { createContext, useState } from 'react'
 import { useLocalStorage } from '../../Hooks/UseLocalStorage';
 const TodoContext = createContext();
@@ -24,7 +25,7 @@ const TodoProvider = (props) => {
    const completeTodos = (id) => {
      const todoIndex = todos.findIndex(todo => todo.id === id)
      const newTodos = [...todos];
-     newTodos[todoIndex].completed = true;
+     newTodos[todoIndex].completed = !newTodos[todoIndex].completed ;
      saveTodos(newTodos);
    }
    const addTodos = (text) =>{
