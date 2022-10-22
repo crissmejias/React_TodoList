@@ -1,4 +1,7 @@
 import React from 'react'
+import { TodoError } from '../components/TodoError';
+import { TodoLoading } from '../components/TodoLoading';
+import { EmptyTodos } from '../components/EmptyTodos';
 import {TodoForm} from "../components/TodoForm"
 import {TodoCounter} from "../components/TodoCounter";
 import {TodoHeader} from "../components/TodoHeader"
@@ -10,20 +13,31 @@ import { TodoItem } from "../components/TodoItem";
 import { useTodos } from "../Hooks/useTodos.js";
 import './App.css'
 function App() {
-  const {error, loading, setSearchValue, searchedTodos,totalTodos,completeTodos, completedTodos, deleteTodos, openModal, setOpenModal, addTodos} = useTodos()
+  const {error, loading, setSearchValue, searchedTodos,totalTodos,completeTodos, completedTodos, deleteTodos, openModal, setOpenModal, addTodos, searchValue} = useTodos()
   return (
         <>
         <TodoHeader>
           <TodoCounter totalTodos={totalTodos} completedTodos={completedTodos}/>
           <TodoSearch setSearchValue={setSearchValue} />
         </TodoHeader>
-        <TodoList>
-            {error && <p>{error}</p>}
-            {loading && <p>Estamos cargando el contenido</p>}
-            {(!loading && !searchedTodos.length) && <p>Crea tu primer todo!!</p>}
-            {searchedTodos.map( todo =>  <TodoItem text={todo.text} completed={todo.completed} key={todo.id} onComplete={()=>{completeTodos(todo.id)}} onDelete={()=>{deleteTodos(todo.id)}}/>)}
-        </TodoList>       
-        {openModal && <TodoModal ><TodoForm setOpenModal={setOpenModal} addTodos={addTodos}/></TodoModal>}
+        <TodoList 
+        searchedTodos={searchedTodos}
+        error={error}
+        searchValue={searchValue}
+        onError={()=><TodoError error={error}/>} 
+        loading={loading}
+        onLoading={()=><TodoLoading/>} 
+        onEmptyTodos={()=><EmptyTodos/>}
+        onEmptySearch={()=> <p>No se encontraron resultados para {searchValue}</p>} 
+        render={todo =>
+        <TodoItem text={todo.text} completed={todo.completed} key={todo.id} onComplete={()=>{completeTodos(todo.id)}} onDelete={()=>{deleteTodos(todo.id)}}/>}
+        />
+        
+             
+        {openModal && 
+        <TodoModal >
+          <TodoForm setOpenModal={setOpenModal} addTodos={addTodos}/>
+        </TodoModal>}
         <CreateTodo
         openModal={openModal}
         setOpenModal={setOpenModal}/>
